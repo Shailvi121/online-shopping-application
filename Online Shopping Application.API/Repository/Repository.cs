@@ -11,6 +11,7 @@ namespace Online_Shopping_Application.API.Repository
         public Repository(FammsContext context)
         {
             _context = context;
+            
         }
         public virtual async Task Create(T entity)
         {
