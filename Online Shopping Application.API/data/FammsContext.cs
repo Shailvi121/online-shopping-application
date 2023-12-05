@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Online_Shopping_Application.API.Models;
+﻿
 
 namespace Online_Shopping_Application.API.data;
 

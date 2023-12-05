@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Mvc;
 
 namespace Online_Shopping_Application.API.Controllers
 {

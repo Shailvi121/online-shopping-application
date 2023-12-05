@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Online_Shopping_Application.API.data;
-using Online_Shopping_Application.API.Repository.Interface;
-using System.Linq.Expressions;
+﻿
 
 namespace Online_Shopping_Application.API.Repository
 {
@@ -13,6 +10,21 @@ namespace Online_Shopping_Application.API.Repository
             _context = context;
             
         }
+        public virtual async Task<IQueryable<T>> GetAll()
+        {
+            var entity = _context.Set<T>().AsQueryable();
+            return await Task.FromResult(entity);
+        }
+        public virtual async Task<T?> GetById(int id)
+        {
+            return await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(entity => EF.Property<int>(entity, "Id") == id);
+
+        }
+        public virtual async Task<T?> FindByAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _context.Set<T>().FirstOrDefaultAsync(predicate) ?? default(T);
+        }
+
         public virtual async Task Create(T entity)
         {
             await _context.Set<T>().AddAsync(entity);
@@ -57,29 +69,12 @@ namespace Online_Shopping_Application.API.Repository
 
         }
 
-        public virtual async Task<T?> FindByAsync(Expression<Func<T, bool>> predicate)
-        {
-            return await _context.Set<T>().FirstOrDefaultAsync(predicate) ?? default(T);
-        }
-
-
-
-        public virtual async Task<T?> GetById(int id)
-        {
-            return await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(entity => EF.Property<int>(entity , "Id") == id); 
-
-        }
-
-        public virtual async Task<int> SaveChanges()
+        public  async Task<int> SaveChanges()
         {
             return _context.SaveChanges();
         }
         
-        public async Task<IQueryable<T>> GetAll()
-        {
-            var entity = _context.Set<T>().AsQueryable();
-            return await Task.FromResult(entity);
-        }
+        
     }
 
 }
