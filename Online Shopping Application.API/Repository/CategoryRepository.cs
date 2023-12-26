@@ -84,7 +84,7 @@ namespace Online_Shopping_Application.API.Repository
             await _context.Categories.AddAsync(category);
 
 
-            await _context.SaveChangesAsync();
+            //await _context.SaveChangesAsync();
 
             var cachedCategory = _cacheManager.Get(Constants.CacheKeys.CategoryKey);
             if (cachedCategory == null)

@@ -1,6 +1,8 @@
-﻿namespace Online_Shopping_Application.API.data;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
-public partial class FammsContext : DbContext 
+namespace Online_Shopping_Application.API.data;
+
+public partial class FammsContext : IdentityDbContext<IdentityUser>
 {
     public FammsContext()
     {
