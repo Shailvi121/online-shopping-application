@@ -1,8 +1,6 @@
-﻿
+﻿namespace Online_Shopping_Application.API.data;
 
-namespace Online_Shopping_Application.API.data;
-
-public partial class FammsContext : DbContext
+public partial class FammsContext : DbContext 
 {
     public FammsContext()
     {
@@ -23,12 +21,17 @@ public partial class FammsContext : DbContext
 
     public virtual DbSet<UserRole> UserRoles { get; set; }
 
+   
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+ #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("Server=TB1;Database=Famms;Trusted_Connection=True;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+
+        
+
         modelBuilder.Entity<Category>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Category__3214EC07FC167FD2");
@@ -61,7 +64,7 @@ public partial class FammsContext : DbContext
 
             entity.HasOne(d => d.Category).WithMany(p => p.Products)
                 .HasForeignKey(d => d.CategoryId)
-                .HasConstraintName("FK__Product__Categor__52593CB8");
+                .HasConstraintName("FK__Product__Category__52593CB8");
 
             entity.HasOne(d => d.CreatedByNavigation).WithMany(p => p.ProductCreatedByNavigations)
                 .HasForeignKey(d => d.CreatedBy)
@@ -82,7 +85,7 @@ public partial class FammsContext : DbContext
 
         modelBuilder.Entity<UserLogin>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__UserLogi__3214EC07A3DB35DF");
+            entity.HasKey(e => e.Id).HasName("PK__UserLogin__3214EC07A3DB35DF");
 
             entity.ToTable("UserLogin");
 

@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Online_Shopping_Application.Models;
-using System.Diagnostics;
-
-namespace Online_Shopping_Application.Controllers
+﻿namespace Online_Shopping_Application.Controllers
 {
     public class HomeController : Controller
     {

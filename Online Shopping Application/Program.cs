@@ -1,6 +1,3 @@
-using Microsoft.EntityFrameworkCore;
-
-
 namespace Online_Shopping_Application
 {
     public class Program
@@ -9,9 +6,12 @@ namespace Online_Shopping_Application
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x => x.LoginPath = "/UserLogin/Login");
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-           
+            builder.Services.Configure<JWTSettings>(builder.Configuration.GetSection("Jwt"));
+            builder.Services.AddHttpNamedClients(builder.Configuration);
+            builder.Services.AddTransient<HttpAPIWrapper>();
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -26,7 +26,7 @@ namespace Online_Shopping_Application
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(

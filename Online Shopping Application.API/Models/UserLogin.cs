@@ -1,6 +1,4 @@
-﻿
-
-namespace Online_Shopping_Application.API.Models;
+﻿namespace Online_Shopping_Application.API.Models;
 
 public partial class UserLogin
 {

@@ -1,0 +1,15 @@
+﻿global using Microsoft.AspNetCore.Authentication.Cookies;
+global using Microsoft.AspNetCore.Authentication;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.IdentityModel.Tokens;
+global using Online_Shopping_Application.Helpers;
+global using Online_Shopping_Application.Models;
+global using System.IdentityModel.Tokens.Jwt;
+global using System.Security.Claims;
+global using System.Text;
+global using System.ComponentModel.DataAnnotations;
+global using System.Diagnostics;
+global using Newtonsoft.Json;
+global using System.Net;
+global using Online_Shopping_Application.Bootstraper;

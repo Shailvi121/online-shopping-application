@@ -14,11 +14,17 @@
     <link href="~/css/style.css" rel="stylesheet" />
     <link href="~/css/responsive.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.18.0/font/bootstrap-icons.css" rel="stylesheet">
+
     <link rel="stylesheet" href="~/Online_Shopping_Application.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
     @await RenderSectionAsync("StyleSheet" , required:false)
 </head>
 <body>
-    <!-- header section strats -->
+
     <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="index.html"><img width="250" src="~/images/logo.png" alt="#" /></a>
@@ -30,29 +36,37 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/Home/Index">Home <span class="sr-only">(current)</span></a>
                     </li>
+
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href= "#"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></a>
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="nav-label">Pages <span class="caret"></span></span>
+                        </a>
                         <ul class="dropdown-menu">
                             <li><a href="/Page/About">About</a></li>
                             <li><a href="/Page/Testimonial">Testimonial</a></li>
                         </ul>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="/Products/Products">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Blog/Blog">Blog</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="/Contact/Contact">Contact</a>
                     </li>
-                   @*  <li class="nav-item">
-                        <a class="nav-link"  asp-action="SignUp" asp-controller="AdminLogin">Register</a>
-                    </li> *@
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="Admin" asp-action="SignUp" asp-controller="AdminLogin">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="Admin" asp-action="SignIn" asp-controller="AdminLogin">Login</a>
+                    </li>
                     <li class="nav-item">
 
                         <a class="nav-link" href="/Cart/Cart">
-                            
+
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                             <g>
                             <g>
@@ -113,20 +127,22 @@
                         </button>
                     </form>
 
-       @*              <form class="form-inline">
+                    <form class="form-inline">
                         <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                             <i class="fa fa-search" aria-hidden="true"></i>
                         </button>
-                    </form> *@
+                    </form> *
                 </ul>
             </div>
         </nav>
     </div>
     </header>
-    <!-- end header section -->
+
+
     @RenderBody()
 
    
+
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.js"></script>

@@ -6,83 +6,62 @@ namespace Online_Shopping_Application.API.Repository
 
         private readonly FammsContext _context;
         private readonly IMemoryCache _cache;
+        private readonly CacheManager<Category> _cacheManager;
 
-        public CategoryRepository(FammsContext context, IMemoryCache cache) : base(context)
+        public CategoryRepository(FammsContext context, IMemoryCache cache, CacheManager<Category> cacheManager) : base(context)
         {
 
             _context = context;
             _cache = cache;
+            _cacheManager = cacheManager;
 
         }
         public override async Task<IQueryable<Category>> GetAll()
         {
 
-            if (_cache.TryGetValue("CategoryAllData", out IQueryable<Category> cachedData))
+            var cachedCategory = _cacheManager.Get(Constants.CacheKeys.CategoryKey);
+            if (cachedCategory != null)
             {
-                return cachedData;
+                return cachedCategory.AsQueryable();
             }
+            var entity = _context.Categories.ToList();
+            _cacheManager.Set(Constants.CacheKeys.CategoryKey, entity);
+            return entity.AsQueryable();
 
-
-            var entity = _context.Set<Category>().AsQueryable();
-
-
-            var cacheEntryOptions = new MemoryCacheEntryOptions
-            {
-                AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(30),
-                SlidingExpiration = TimeSpan.FromMinutes(3)
-            };
-
-            _cache.Set("CategoryAllData", entity, cacheEntryOptions);
-
-            return await Task.FromResult(entity);
         }
 
         public override async Task<Category?> GetById(int id)
         {
-
-            if (_cache.TryGetValue("CategoryCache", out List<Category> cachedData))
+            var cachedCategory = _cacheManager.Get(Constants.CacheKeys.CategoryKey);
+            var cachedEntity = cachedCategory.FirstOrDefault(e => e.Id == id);
+            if (cachedEntity != null)
             {
-                var cachedEntity = cachedData.FirstOrDefault(entity => entity.Id == id);
-
-                if (cachedEntity != null)
-                {
-
-                    return cachedEntity;
-
-                }
-
+                return cachedEntity;
             }
             var entity = _context.Categories.AsNoTracking().FirstOrDefault(e => e.Id == id);
 
             if (entity != null)
             {
-                cachedData ??= new List<Category>();
-                cachedData.Add(entity);
+                cachedCategory ??= new List<Category>();
+                cachedCategory.Add(entity);
 
-                var cacheEntryOptions = new MemoryCacheEntryOptions
-                {
-                    AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(30),
-                    SlidingExpiration = TimeSpan.FromMinutes(30)
-                };
-
-                _cache.Set("CategoryCache", cachedData, cacheEntryOptions);
+                _cacheManager.Set(Constants.CacheKeys.CategoryKey, cachedCategory);
 
             }
             return entity;
         }
         public override async Task<Category?> FindByAsync(Expression<Func<Category, bool>> predicate)
         {
-          
 
-            if (_cache.TryGetValue("CategoriesCache", out List<Category> cachedCategories))
+
+            var cachedCategory = _cacheManager.Get(Constants.CacheKeys.CategoryKey);
+            var cachedEntity = cachedCategory.FirstOrDefault(predicate.Compile());
+
+            if (cachedEntity != null)
             {
-                var cachedEntity = cachedCategories.FirstOrDefault(predicate.Compile());
-
-                if (cachedEntity != null)
-                {
-                    return cachedEntity;
-                }
+                return cachedEntity;
             }
+
 
             var entity = await _context.Categories
                 .AsNoTracking()
@@ -90,16 +69,10 @@ namespace Online_Shopping_Application.API.Repository
 
             if (entity != null)
             {
-                cachedCategories ??= new List<Category>();
-                cachedCategories.Add(entity);
+                cachedCategory ??= new List<Category>();
+                cachedCategory.Add(entity);
 
-                var cacheEntryOptions = new MemoryCacheEntryOptions
-                {
-                    AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(30),
-                    SlidingExpiration = TimeSpan.FromMinutes(30)
-                };
-
-                _cache.Set("CategoryCache", cachedCategories, cacheEntryOptions);
+                _cache.Set(Constants.CacheKeys.CategoryKey, cachedCategory);
 
             }
 
@@ -113,27 +86,22 @@ namespace Online_Shopping_Application.API.Repository
 
             await _context.SaveChangesAsync();
 
-
-            if (_cache.TryGetValue("CategoriesCache", out List<Category> cachedCategories))
+            var cachedCategory = _cacheManager.Get(Constants.CacheKeys.CategoryKey);
+            if (cachedCategory == null)
             {
 
-                cachedCategories.Add(category);
+                cachedCategory.Add(category);
 
 
-                _cache.Set("CategoriesCache", cachedCategories, new MemoryCacheEntryOptions
-                {
-                    AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10),
-                    SlidingExpiration = TimeSpan.FromMinutes(1)
-                });
+                _cacheManager.Set(Constants.CacheKeys.CategoryKey, cachedCategory);
+
             }
             else
             {
 
-                _cache.Set("CategoriesCache", new List<Category> { category }, new MemoryCacheEntryOptions
-                {
-                    AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10),
-                    SlidingExpiration = TimeSpan.FromMinutes(1)
-                });
+               // _cacheManager.Set(Constants.CacheKeys.CategoryKey, new List<Category> { category }, new MemoryCacheEntryOptions);
+
+
             }
         }
 
@@ -168,18 +136,16 @@ namespace Online_Shopping_Application.API.Repository
                 await _context.SaveChangesAsync();
 
 
-                if (_cache.TryGetValue("CategoriesCache", out List<Category> cachedCategories))
+                var cachedCategory = _cacheManager.Get(Constants.CacheKeys.CategoryKey);
+                if (cachedCategory != null)
                 {
-                    var index = cachedCategories.FindIndex(g => g.Id == id);
+                    var index = cachedCategory.FindIndex(g => g.Id == id);
                     if (index != -1)
                     {
-                        cachedCategories[index] = category;
+                        cachedCategory[index] = category;
 
-                        _cache.Set("CategoriesCache", cachedCategories, new MemoryCacheEntryOptions
-                        {
-                            AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10),
-                            SlidingExpiration = TimeSpan.FromMinutes(1)
-                        });
+                        _cacheManager.Set(Constants.CacheKeys.CategoryKey, cachedCategory);
+
                     }
                 }
             }
@@ -193,15 +159,12 @@ namespace Online_Shopping_Application.API.Repository
                 return 0;
             }
             _context.Categories.Remove(user);
-            if (_cache.TryGetValue("CategoriesCache", out List<Category> cachedCategories))
+            var cachedCategory = _cacheManager.Get(Constants.CacheKeys.CategoryKey);
+            if (cachedCategory!= null)  
             {
-                cachedCategories.Remove(user);
-                _cache.Set("CategoriesCache", cachedCategories, new MemoryCacheEntryOptions
-                {
-                    AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10),
-                    SlidingExpiration = TimeSpan.FromMinutes(1)
-
-                });
+                cachedCategory.Remove(user);
+                _cacheManager.Set(Constants.CacheKeys.CategoryKey, cachedCategory);
+               
             }
 
             return await _context.SaveChangesAsync();

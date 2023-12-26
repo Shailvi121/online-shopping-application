@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace Online_Shopping_Application.Controllers
+﻿namespace Online_Shopping_Application.Controllers
 {
     public class ContactController : Controller
     {

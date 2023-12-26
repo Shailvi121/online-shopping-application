@@ -9,6 +9,7 @@ D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Applicatio
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Azure.Core.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Azure.Identity.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Humanizer.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Microsoft.AspNetCore.Razor.Language.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Microsoft.Build.dll
@@ -48,6 +49,8 @@ D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Applicatio
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Mono.TextTemplating.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Newtonsoft.Json.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Npgsql.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\NuGet.Common.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\NuGet.Configuration.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\NuGet.DependencyResolver.Core.dll
@@ -238,6 +241,7 @@ D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Applicatio
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\staticwebassets.pack.json
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\staticwebassets.build.json
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\staticwebassets.development.json
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\scopedcss\Areas\Admin\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\scopedcss\bundle\Online Shopping Application.styles.css
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\scopedcss\projectbundle\Online Shopping Application.bundle.scp.css
@@ -247,4 +251,3 @@ D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Applicatio
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\Online Shopping Application.pdb
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\Online Shopping Application.genruntimeconfig.cache
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\ref\Online Shopping Application.dll
-D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\scopedcss\Areas\User\Views\Shared\_Layout.cshtml.rz.scp.css
