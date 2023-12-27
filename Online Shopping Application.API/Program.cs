@@ -1,16 +1,6 @@
-using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;  // Add this using directive
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Online_Shopping_Application.API.Data;  // Make sure to adjust this namespace based on your project structure
+
+
+using Online_Shopping_Application.API.Services;
 
 namespace Online_Shopping_Application.API
 {
@@ -34,21 +24,21 @@ namespace Online_Shopping_Application.API
             });
             #endregion
 
-            #region Identity
-            builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<FammsContext>()
-                .AddDefaultTokenProviders();
+            //#region Identity
+            //builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+            //    .AddEntityFrameworkStores<FammsContext>()
+            //    .AddDefaultTokenProviders();
 
-            builder.Services.Configure<IdentityOptions>(options =>
-            {
-                // Default Password settings.
-                options.Password.RequireDigit = false;
-                options.Password.RequireLowercase = false;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireUppercase = false;
-                options.Password.RequiredLength = 6;
-            });
-            #endregion
+            //builder.Services.Configure<IdentityOptions>(options =>
+            //{
+            //    // Default Password settings.
+            //    options.Password.RequireDigit = false;
+            //    options.Password.RequireLowercase = false;
+            //    options.Password.RequireNonAlphanumeric = false;
+            //    options.Password.RequireUppercase = false;
+            //    options.Password.RequiredLength = 6;
+            //});
+            //#endregion
 
             #region JwtAuthentication
             builder.Services.AddAuthentication(options =>
@@ -70,6 +60,9 @@ namespace Online_Shopping_Application.API
                         RequireExpirationTime = true,
                     };
                 });
+            #endregion
+            #region DI
+            builder.Services.AddTransient<JWTServices>();
             #endregion
 
             #region AddCors
@@ -96,7 +89,7 @@ namespace Online_Shopping_Application.API
             }
 
             app.UseHttpsRedirection();
-            await SeedDatabase.AddAdminUser(app.Services);
+          
 
             app.UseAuthentication();
             app.UseAuthorization();

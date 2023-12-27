@@ -1,4 +1,7 @@
-﻿namespace Online_Shopping_Application.API.Controllers
+﻿using Online_Shopping_Application.API.Services;
+using System.Security.Claims;
+
+namespace Online_Shopping_Application.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -7,12 +10,14 @@
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IConfiguration _configuration;
         private readonly RoleManager<IdentityRole> _roleManager;
-        public AuthenticateController(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
+        private readonly JWTServices _jwtService;
+
+        public AuthenticateController(JWTServices jwtService,UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IConfiguration configuration)
         {
             _userManager = userManager;
             _configuration = configuration;
             _roleManager = roleManager;
-
+            _jwtService=jwtService;
         }
         [HttpPost]
         [Route("Login")]
@@ -35,13 +40,10 @@
                 }
 
 
-                var token = GetToken(authClaims);
+                //var token = GetToken(authClaims);
 
-                return Ok(new
-                {
-                    token = new JwtSecurityTokenHandler().WriteToken(token),
-                    expiration = token.ValidTo
-                });
+                return Ok(_jwtService.GenerateToken(authClaims));
+               
             }
             return Unauthorized();
 
@@ -105,17 +107,17 @@
             }
             return Ok(new Models.Response { Status = "Success", Message = "Admin created successfully!" });
         }
-        private JwtSecurityToken GetToken(List<Claim> authClaims)
-        {
-            var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Key"]));
-            var token = new JwtSecurityToken(
-                issuer: _configuration["JWT:Issuer"],
-                audience: _configuration["JWT:Audience"],
-                expires: DateTime.Now.AddHours(3),
-                claims: authClaims,
-                signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
-                );
-            return token;
-        }
+        //private JwtSecurityToken GetToken(List<Claim> authClaims)
+        //{
+        //    var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Key"]));
+        //    var token = new JwtSecurityToken(
+        //        issuer: _configuration["JWT:Issuer"],
+        //        audience: _configuration["JWT:Audience"],
+        //        expires: DateTime.Now.AddHours(3),
+        //        claims: authClaims,
+        //        signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
+        //        );
+        //    return token;
+        //}
     }
 }
