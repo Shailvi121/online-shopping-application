@@ -14,6 +14,8 @@ namespace Online_Shopping_Application.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<ICategory, CategoryRepository>();
+            builder.Services.AddScoped<IUserLogin, UserLoginRepository>();
+            builder.Services.AddScoped<IUserRole, UserRoleRepository>();
             builder.Services.AddMemoryCache();
             builder.Services.AddScoped(typeof(CacheManager<>));
 

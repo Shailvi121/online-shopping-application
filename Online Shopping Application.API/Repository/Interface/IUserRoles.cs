@@ -1,6 +1,7 @@
 ﻿namespace Online_Shopping_Application.API.Repository.Interface
 {
-    public interface IUserRoles: IRepository<IUserRoles>
+    public interface IUserRole : IRepository<UserRole>
     {
+        Task<List<UserRole>> GetRolesAsync(string user);
     }
 }
