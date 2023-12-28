@@ -19,6 +19,16 @@ namespace Online_Shopping_Application.API.Controllers
             _roleManager = roleManager;
             _jwtService=jwtService;
         }
+        [HttpGet]
+        [Route("GetUser")]
+        public async Task<IActionResult> GetUser(LoginModel model)
+        {
+            var user = await _repository.GetById();
+            if (UserName==username  )
+            {
+                
+
+        }
         [HttpPost]
         [Route("Login")]
         public async Task<IActionResult> Login(LoginModel model)
