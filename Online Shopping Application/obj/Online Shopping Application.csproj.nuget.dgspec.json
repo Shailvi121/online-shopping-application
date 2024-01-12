@@ -4,14 +4,14 @@
     "D:\\shailvi gupta\\learning\\Online Shopping Application\\Online Shopping Application\\Online Shopping Application.csproj": {}
   },
   "projects": {
-    "D:\\shailvi gupta\\learning\\Online Shopping Application\\Online Shopping Application\\Online Shopping Application.csproj": {
+    "D:\\shailvi gupta\\learning\\Online Shopping Application\\Online Shopping Application.API\\Online Shopping Application.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\shailvi gupta\\learning\\Online Shopping Application\\Online Shopping Application\\Online Shopping Application.csproj",
-        "projectName": "Online Shopping Application",
-        "projectPath": "D:\\shailvi gupta\\learning\\Online Shopping Application\\Online Shopping Application\\Online Shopping Application.csproj",
+        "projectUniqueName": "D:\\shailvi gupta\\learning\\Online Shopping Application\\Online Shopping Application.API\\Online Shopping Application.API.csproj",
+        "projectName": "Online Shopping Application.API",
+        "projectPath": "D:\\shailvi gupta\\learning\\Online Shopping Application\\Online Shopping Application.API\\Online Shopping Application.API.csproj",
         "packagesPath": "C:\\Users\\infot\\.nuget\\packages\\",
-        "outputPath": "D:\\shailvi gupta\\learning\\Online Shopping Application\\Online Shopping Application\\obj\\",
+        "outputPath": "D:\\shailvi gupta\\learning\\Online Shopping Application\\Online Shopping Application.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,6 +44,120 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "HotChocolate.AspNetCore": {
+              "target": "Package",
+              "version": "[13.7.0, )"
+            },
+            "HotChocolate.AspNetCore.Playground": {
+              "target": "Package",
+              "version": "[10.5.5, )"
+            },
+            "HotChocolate.Data.EntityFramework": {
+              "target": "Package",
+              "version": "[13.7.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.14, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\shailvi gupta\\learning\\Online Shopping Application\\Online Shopping Application\\Online Shopping Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\shailvi gupta\\learning\\Online Shopping Application\\Online Shopping Application\\Online Shopping Application.csproj",
+        "projectName": "Online Shopping Application",
+        "projectPath": "D:\\shailvi gupta\\learning\\Online Shopping Application\\Online Shopping Application\\Online Shopping Application.csproj",
+        "packagesPath": "C:\\Users\\infot\\.nuget\\packages\\",
+        "outputPath": "D:\\shailvi gupta\\learning\\Online Shopping Application\\Online Shopping Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\infot\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "D:\\shailvi gupta\\learning\\Online Shopping Application\\Online Shopping Application.API\\Online Shopping Application.API.csproj": {
+                "projectPath": "D:\\shailvi gupta\\learning\\Online Shopping Application\\Online Shopping Application.API\\Online Shopping Application.API.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[7.0.14, )"
@@ -68,9 +182,17 @@
               "target": "Package",
               "version": "[7.0.14, )"
             },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Core": {
               "target": "Package",
               "version": "[7.0.11, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",

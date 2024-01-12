@@ -4,6 +4,7 @@ namespace Online_Shopping_Application.API.Models;
 
 public partial class Product
 {
+    [Key]
     public int Id { get; set; }
 
     public int? CategoryId { get; set; }

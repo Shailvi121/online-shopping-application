@@ -36,11 +36,11 @@ public partial class FammsContext : DbContext
 
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Category__3214EC07FC167FD2");
+            //entity.HasKey(e => e.ID).HasName("PK__Category__3214EC07FC167FD2");
 
             entity.ToTable("Category");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            //entity.Property(e => e.ID).ValueGeneratedNever();
             entity.Property(e => e.CreatedOn).HasColumnType("datetime");
             entity.Property(e => e.Name).HasMaxLength(255);
             entity.Property(e => e.UpdatedOn).HasColumnType("datetime");
@@ -60,7 +60,7 @@ public partial class FammsContext : DbContext
 
             entity.ToTable("Product");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            //entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.CreatedOn).HasColumnType("datetime");
             entity.Property(e => e.UpdatedOn).HasColumnType("datetime");
 
@@ -102,7 +102,7 @@ public partial class FammsContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__UserRole__3214EC07F037A623");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            //entity.Property(e => e.Id).ValueGeneratedNever();
 
             entity.HasOne(d => d.Role).WithMany(p => p.UserRoles)
                 .HasForeignKey(d => d.RoleId)

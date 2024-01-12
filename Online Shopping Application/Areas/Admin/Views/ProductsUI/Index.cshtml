@@ -1,0 +1,44 @@
+﻿@model List<Online_Shopping_Application.Areas.Admin.Model.UIProductViewModel>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+</head>
+<body>
+
+    <h2>Products</h2>
+
+    <p>
+        <a asp-area="Admin" asp-controller="Product" asp-action="Create">Create New</a>
+    </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Category Id</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Id</td>
+                    <td>@product.CategoryId</td>
+                    <td>@product.Description</td>
+                    <td>@product.Image</td>
+                    <td>
+                        <a asp-area="Admin" asp-controller="Product" asp-action="Edit" asp-route-id="@product.Id">Edit</a> |
+                        <a asp-area="Admin" asp-controller="Product" asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</body>
+</html>

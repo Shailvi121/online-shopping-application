@@ -2,10 +2,9 @@
 {
     public interface IUserLogin : IRepository<UserLogin>
     {
-        Task<string> FindEmailByAsync(string email);
-        Task<bool> CheckPasswordAsync(string email, string password);
-
-
+        Task<UserLogin> FindUserByEmailAsync(string email);
+        //Task<bool> CheckPasswordAsync(string email, string password);
+        
 
     }
 }

@@ -1,3 +1,6 @@
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Online Shopping Application.API.deps.json
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Online Shopping Application.API.runtimeconfig.json
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Online Shopping Application.API.exe
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\appsettings.Development.json
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\appsettings.json
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Online Shopping Application.staticwebassets.runtime.json
@@ -6,8 +9,39 @@ D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Applicatio
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Online Shopping Application.runtimeconfig.json
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Online Shopping Application.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Online Shopping Application.pdb
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\AutoMapper.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Azure.Core.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Azure.Identity.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\BananaCakePop.Middleware.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\GreenDonut.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Abstractions.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.AspNetCore.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.AspNetCore.Abstractions.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.AspNetCore.Playground.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Authorization.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Data.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Data.EntityFramework.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Execution.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Execution.Abstractions.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Fetching.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Language.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Language.SyntaxTree.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Language.Utf8.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Language.Visitors.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Language.Web.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Server.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Subscriptions.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Subscriptions.InMemory.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Transport.Sockets.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Types.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Types.CursorPagination.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Types.Mutations.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Types.OffsetPagination.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Types.Scalars.Upload.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Types.Shared.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Utilities.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\HotChocolate.Validation.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Humanizer.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Microsoft.AspNetCore.Razor.Language.dll
@@ -42,6 +76,7 @@ D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Applicatio
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Microsoft.NET.StringTools.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Microsoft.OpenApi.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
@@ -60,6 +95,9 @@ D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Applicatio
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\NuGet.ProjectModel.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\NuGet.Protocol.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\NuGet.Versioning.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\System.CodeDom.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\System.Composition.AttributedModel.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\System.Composition.Convention.dll
@@ -69,12 +107,14 @@ D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Applicatio
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\System.Drawing.Common.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\System.IO.Hashing.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\System.Memory.Data.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\System.Reflection.MetadataLoadContext.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\System.Runtime.Caching.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\System.Security.Cryptography.ProtectedData.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\System.Security.Permissions.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\System.Windows.Extensions.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Yarp.ReverseProxy.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\af\Humanizer.resources.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\ar\Humanizer.resources.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\az\Humanizer.resources.dll
@@ -226,11 +266,14 @@ D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Applicatio
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Online Shopping Application.API.dll
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\bin\Debug\net7.0\Online Shopping Application.API.pdb
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\Online Shopping Application.csproj.AssemblyReference.cache
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\Online Shopping Application.GeneratedMSBuildEditorConfig.editorconfig
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\Online Shopping Application.AssemblyInfoInputs.cache
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\Online Shopping Application.AssemblyInfo.cs
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\Online Shopping Application.csproj.CoreCompileInputs.cache
+D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\Online Shopping Application.MvcApplicationPartsAssemblyInfo.cs
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\Online Shopping Application.MvcApplicationPartsAssemblyInfo.cache
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\Online Shopping Application.RazorAssemblyInfo.cache
 D:\shailvi gupta\learning\Online Shopping Application\Online Shopping Application\obj\Debug\net7.0\Online Shopping Application.RazorAssemblyInfo.cs

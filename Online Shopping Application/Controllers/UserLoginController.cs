@@ -13,11 +13,12 @@
         }
 
         public IActionResult Login()
-        {
+            {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Login(string username, string password)
+       
+        public async Task<IActionResult> LoginIn(string username, string password)
         {
             var endpoint = Constants.APIEndpoints.Login;
             var content = new LoginAPIModel
@@ -56,7 +57,7 @@
 
                 
 
-                return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
+                return RedirectToAction("Index", "Dashboard");
             }
             else
             {
@@ -67,7 +68,7 @@
         }
 
 
-
+       
         public IActionResult Registration()
         {
             return View();

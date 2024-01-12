@@ -1,6 +1,5 @@
-
-
 using Online_Shopping_Application.API.Services;
+using Online_Shopping_Application.Response;
 
 namespace Online_Shopping_Application.API
 {
@@ -14,10 +13,14 @@ namespace Online_Shopping_Application.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
             builder.Services.AddScoped<ICategory, CategoryRepository>();
+            builder.Services.AddScoped<IProduct, ProductRepository>();
             builder.Services.AddScoped<IUserLogin, UserLoginRepository>();
-            builder.Services.AddScoped<IUserRole, UserRoleRepository>();
+            //builder.Services.AddScoped<IUserRole, UserRoleRepository>();
+            builder.Services.AddScoped<JWTResponse>();
             builder.Services.AddMemoryCache();
             builder.Services.AddScoped(typeof(CacheManager<>));
+            builder.Services.AddAutoMapper(typeof(Program)); 
+
 
             #region Identity
             builder.Services.AddDbContext<FammsContext>(options =>

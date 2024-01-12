@@ -1,0 +1,157 @@
+﻿@model List<Online_Shopping_Application.Areas.Admin.Model.UICategoryViewModel>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Categories</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- Add your custom CSS styles -->
+    <style>
+        body {
+            padding: 20px;
+            background-color: #fff; /* White background color for the entire body */
+            color: #000; /* Black text color for better readability on a white background */
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #d82d2f; /* Red text color for the header */
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .btn-create {
+            margin-bottom: 20px;
+            background-color: #d82d2f; /* Red background color for the create button */
+            border-color: #d82d2f; /* Red border color for the create button */
+        }
+
+        .table th, .table td {
+            text-align: center;
+        }
+
+        .thead-light {
+            background-color: #f8f9fa; /* Light background color for the table header */
+        }
+
+        .btn-edit {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-delete {
+            color: #fff;
+            background-color: #dc3545;
+            border-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Categories</h2>
+
+        <p>
+            <a asp-area="Admin" asp-controller="Category" asp-action="Create" class="btn btn-primary btn-create">Create New</a>
+        </p>
+
+        <table class="table table-bordered table-striped">
+            <thead class="thead-light">
+                <!-- Use thead-light class for a light background color -->
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var category in Model)
+                {
+                    <tr>
+                        <td>@category.Id</td>
+                        <td>@category.Name</td>
+                        <td>
+                            <a asp-area="Admin" asp-controller="Category" asp-action="Edit" asp-route-id="@category.Id" class="btn btn-success btn-edit">Edit</a>
+                            <button id="deletebutton" class="btn btn-primary" onclick="deleteCategory(@category.Id)">Delete</button>
+
+                        </td>
+
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade " id="modalDelete">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Delete</h5>
+
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <h4>Are you sure to delete this </h4>
+                    </div>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" id="delete" class="btn btn-danger" onclick="confirmDelete(id)">Delete</button>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" id="hiddencategoryid" name="Id">
+    </div>
+ 
+  
+
+
+
+    @section Scripts {
+        <script type="text/javascript">
+            function deleteCategory(Categoryid) {
+                $("#hiddencategoryid").val(Categoryid);
+                $("#modalDelete").modal('show');
+            }
+            function confirmDelete() {
+                var catid = $("#hiddencategoryid").val();
+                $.ajax({
+                    type: "POST",
+                    url: '/Admin/Category/deleted/' + catid,
+
+                    success: function (result) {
+
+
+                        $("#modalDelete").modal('hide');
+                        window.location.href = '/Admin/Category/Index';
+
+
+                    },
+                    error: function (error) {
+
+                        console.error(error);
+                    }
+
+                });
+            }
+
+        </script>
+
+    }
+
+
+</body>
+</html>

@@ -1,3 +1,7 @@
+using Online_Shopping_Application.API.Repository.Interface;
+using Online_Shopping_Application.API.Services;
+using Online_Shopping_Application.Response;
+
 namespace Online_Shopping_Application
 {
     public class Program
@@ -12,6 +16,9 @@ namespace Online_Shopping_Application
             builder.Services.Configure<JWTSettings>(builder.Configuration.GetSection("Jwt"));
             builder.Services.AddHttpNamedClients(builder.Configuration);
             builder.Services.AddTransient<HttpAPIWrapper>();
+            builder.Services.AddScoped<JWTResponse>();
+           builder.Services.AddTransient<JWTServices>();
+    
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -30,8 +37,8 @@ namespace Online_Shopping_Application
             app.UseAuthorization();
 
             app.MapControllerRoute(
-            name: "MyArea",
-            pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+            name: "admin",
+        pattern: "{area=Admin}/{controller=AdminLogin}/{action=SignIn}/{id?}");
 
             app.MapControllerRoute(
                 name: "default",

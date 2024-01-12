@@ -24,7 +24,6 @@
     @await RenderSectionAsync("StyleSheet" , required:false)
 </head>
 <body>
-
     <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="index.html"><img width="250" src="~/images/logo.png" alt="#" /></a>
@@ -58,10 +57,10 @@
                         <a class="nav-link" href="/Contact/Contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-area="Admin" asp-action="SignUp" asp-controller="AdminLogin">Register</a>
+                        <a class="nav-link" asp-area="" asp-action="Registration" asp-controller="UserLogin">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-area="Admin" asp-action="SignIn" asp-controller="AdminLogin">Login</a>
+                        <a class="nav-link" asp-area="" asp-action="Login" asp-controller="UserLogin">Login</a>
                     </li>
                     <li class="nav-item">
 

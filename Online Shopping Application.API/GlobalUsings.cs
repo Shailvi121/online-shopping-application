@@ -7,7 +7,6 @@ global using Online_Shopping_Application.API.Repository.Interface;
 global using Microsoft.AspNetCore.Mvc;
 global using Online_Shopping_Application.API.CacheManager;
 global using Online_Shopping_Application.API.Helpers;
-global using Microsoft.AspNetCore.Identity;
 global using Microsoft.IdentityModel.Tokens;
 global using System.IdentityModel.Tokens.Jwt;
 global using System.Security.Claims;

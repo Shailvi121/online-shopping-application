@@ -1,6 +1,10 @@
-﻿namespace Online_Shopping_Application.Areas.Admin.Controllers
+﻿using Online_Shopping_Application.Area.Admin.Model;
+
+namespace Online_Shopping_Application.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    
+   
     public class AdminLoginController : Controller
     {
         private readonly IConfiguration _configuration;
@@ -14,6 +18,7 @@
 
         }
         //  [Route("admin-sign-in")]
+       
         public IActionResult SignIn()
         {
             return View();
@@ -23,12 +28,12 @@
         public async Task<IActionResult> SignIn(string username, string password)
         {
             var endpoint = Constants.APIEndpoints.Login;
-            var content = new LoginAPIModel
+            var content = new AdminLoginModel
             {
                 Username = username,
                 Password = password,
             };
-            var response = await _apiWrapper.PostAsync<TokenResponse, LoginAPIModel>(endpoint, content);
+            var response = await _apiWrapper.PostAsync<TokenResponse, AdminLoginModel>(endpoint, content);
             if (response != null)
             {
                 var tokenData = response.data;
@@ -49,6 +54,8 @@
 
                 var adminId = principal.FindFirst(ClaimTypes.Name)?.Value;
                 var adminRole = principal.FindFirst(ClaimTypes.Role)?.Value;
+                Console.WriteLine($"Admin Role: {adminRole}");
+
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
             }
             return RedirectToAction("Index", "Dashboard");
@@ -59,14 +66,10 @@
             var endpoint = Constants.APIEndpoints.Register;
             var content = new RegisterAPIModel
             {
-
                 Username = model.Username,
-               
                 Password = model.Password,
             };
-
             var response = await _apiWrapper.PostAsync<TokenResponse, RegisterAPIModel>(endpoint, content);
-
             if (response != null)
             {
                 var tokenData = response.data;
@@ -96,7 +99,7 @@
 
             return RedirectToAction("Index", "Dashboard");
         }
-
+        
         public IActionResult SignUp()
         {
             return View();
